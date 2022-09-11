@@ -3,6 +3,11 @@
 ## Table of Contents
 
 1. [**General Description**](#general-description)
+2. [**Proposed approaches to an architecture of a system**](#proposed-approaches-to-an-architecture-of-a-system)
+   1. [Proposal 1](#proposal-1)
+   2. [Proposal 2](#proposal-2)
+   3. [Proposal 3](#proposal-3)
+3. [**Establishing connection between a sensor and a hub**](#establishing-connection-between-a-sensor-and-a-hub)
 
 # General Description
 
@@ -35,3 +40,15 @@ Simpler solution is to directly connect all sensors with a server. It makes sett
 It is possible to implement both of proposals. It allows customization for everyone needs. It makes inbound data managment service more complex.
 
 ![diagram 3](./assets/architecture-diagram-3.png)
+
+# Establishing connection between a sensor and a hub
+
+Both of these devices must find each other within a network. For that a thermometer is going to send a requests in a loop until it receves 200 HTTP response code. The hub will process such request, so that it can request temperatures later.
+
+**Finding a hub's ip by a thermometer device**
+
+![diagram-1](./assets/Establishing-Connection-1.png)
+
+**Request handling by a hub**
+
+![diagram-1](./assets/Establishing-Connection-2.png)
